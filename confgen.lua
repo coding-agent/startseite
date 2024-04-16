@@ -11,7 +11,7 @@ local function getArticles()
             local article = loadfile("articles/" .. file)()
             if article then
                 article.file = file:gsub("%.lua$", ".html")
-                table.insert(list, article)
+                list[file:gsub("%.lua$", "")] = article
             end
         end
     end

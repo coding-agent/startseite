@@ -1,4 +1,4 @@
-<! local article = opt.articles["how-to-make-a-blog-the-hard-way"] !>
+<! local article = opt.articles["how-to-build-a-blog-the-hard-way"] !>
 <% opt.doctype %>
 <html>
 <head>
@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="header">
-        <h2><% article.date %> - <% article.title %></h2>
+        <h2><% article.title %> - <% article.date %></h2>
     </div>
 
 </body>

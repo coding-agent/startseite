@@ -13,12 +13,19 @@ sup {
     color: #8888FF
 }
 
+h1, h2, h3 {
+    margin-block-start: 0.25em;
+    margin-block-end: 0.25em;
+}
+
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
     word-wrap: break-word;
     background: #202020; 
+    width: 95%;
+    margin: 2.5%;
 }
 
 .header {

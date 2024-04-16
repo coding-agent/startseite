@@ -1,1 +1,2 @@
-confgen confgen.lua dist/
+cd src/
+confgen confgen.lua ../

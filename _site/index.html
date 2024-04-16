@@ -1,10 +1,14 @@
-<% opt.doctype %>
+<!doctype html>
 <html>
 <head>
 <title>Coding Agent's Blog</title>
 <meta name="description" content="Personal blog page">
 <meta name="keywords" content="coding-agent blog">
-<% opt.header_links %>
+<link rel="stylesheet" type="text/css" href="/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div class="header">
@@ -14,16 +18,16 @@
 
     <div class="content">
     <h2> Articles </h2>
-        <! for _, article in ipairs(opt.articles) do !>
-            <a href="<% article.file %>" class="article">
-                <h3><% article.title %> <sup><% article.lang %></sup></h3>
+        
+            <a href="articles/how-to-make-a-blog-the-hard-way.html" class="article">
+                <h3>How to make a blog the hard way? <sup>eng</sup></h3>
                 <hr>
                 <div class="article_footer">
-                    <% article.date %>
+                    14-04-2024
                     <b class="blinking readmore"> Read more </b>
                 </div>
             </a>
-        <! end !>
+        
     </div>
 </body>
 </html>

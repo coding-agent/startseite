@@ -9,6 +9,20 @@ hr, b, .subtitle {
     color: <% opt.style.sub_text %>;
 }
 
+h1 {
+    font-weight: 900;
+    font-size: 2.5rem;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+a {
+    color: <% opt.style.blue %>;
+}
+
 sup {
     color: <% opt.style.blue %>
 }

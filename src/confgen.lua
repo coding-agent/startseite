@@ -21,6 +21,7 @@ end
 
 cg.opt.articles = getArticles();
 cg.opt.style = require('style')
+
 cg.opt.doctype = "<!doctype html>"
 cg.opt.header_links = [[
 <link rel="stylesheet" type="text/css" href="style.css">

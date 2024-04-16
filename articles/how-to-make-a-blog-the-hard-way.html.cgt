@@ -1,0 +1,13 @@
+<! local article = opt.articles["how-to-make-a-blog-the-hard-way"] !>
+<% opt.doctype %>
+<html>
+<head>
+<title><% article.title %></title>
+<% opt.header_links %>
+</head>
+<body>
+    <div class="header">
+        <h2><% article.date %> - <% article.title %></h2>
+    </div>
+
+</body>

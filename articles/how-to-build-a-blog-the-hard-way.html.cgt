@@ -18,8 +18,10 @@
         <p>That being said I needed to make the blog building fun and that's the reason for this title, so stick with me and I will explain <b>"How to build a blog the hard way".</b></p>
         <iframe src="https://giphy.com/embed/ORjfgiG9ZtxcQQwZzv" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/126bpm-dancingatclub-ORjfgiG9ZtxcQQwZzv">via GIPHY</a></p>
         <h2>Template generator vs SSG</h2>
-        <p><a href="https://git.mzte.de/LordMZTE/confgen">Confgen</a> is a tool with the main purpose to generate config files and was my main pick because it is simple to use and I use it a lot for my humble dotfiles but that is a topic for another day.</p>
-        <p>There are out there many options of ssg and they are all amazing but at the end of the dat they are on most of the cases doing the same as a template generator so why not doing a website with a template generator that I actually use very often. So lets talk a bit about the tool, shall we?</p>
+        <p><a href="https://git.mzte.de/LordMZTE/confgen">Confgen</a> is a tool with the main purpose to generate config files. I use it for my humble dotfiles but that is a topic for another day.</p>
+        <p>There are out there many options of ssg(static site generators) like Hugo, Next.js and the always evolving javascript frameworks but they can be a bit time consuming to keep up with and not everyone like to spend much time in web dev.
+        With that being said, it would probably offer a more structured and scalable project in exchange of some flexibility but that is not how we build a blog the hard way. 
+        So lets talk a bit about the tool, shall we?</p>
         <h2>Confgen</h2>
         <p>Anyone who has ever dealt with dotfiles knows how difficult it can be to customize them (for example change a theme) and that's where confgen comes into place.</p>
         <p>And also it is mainly written in <a href="https://ziglang.org/learn/overview/">Zig</a> but all the configuration is with lua files</p>

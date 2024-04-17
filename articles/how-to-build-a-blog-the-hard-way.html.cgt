@@ -19,12 +19,12 @@
         <iframe src="https://giphy.com/embed/ORjfgiG9ZtxcQQwZzv" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/126bpm-dancingatclub-ORjfgiG9ZtxcQQwZzv">via GIPHY</a></p>
         <h2>Template generator vs SSG</h2>
         <p><a href="https://git.mzte.de/LordMZTE/confgen">Confgen</a> is a tool with the main purpose to generate config files. I use it for my humble dotfiles but that is a topic for another day.</p>
-        <p>There are out there many options of ssg(static site generators) like Hugo, Next.js and the always evolving javascript frameworks but they can be a bit time consuming to keep up with and not everyone like to spend much time in web dev.
-        With that being said, it would probably offer a more structured and scalable project in exchange of some flexibility but that is not how we build a blog the hard way. 
-        So lets talk a bit about the tool, shall we?</p>
+        <p>There are out there many options of ssg(static site generators) like Hugo, Next.js. For some ssg, a single structural metadata file may correspond to an entire website with a framework like AngularJS. But the always evolving javascript frameworks can be a time consuming to keep up which then leads to more time in web dev than anything else.
+        With that being said, a ssg offers a more structured and scalable project in exchange of some flexibility but that is not how we build a blog the hard way. 
+        So lets talk a bit about the tool that will make things fun, shall we?</p>
         <h2>Confgen</h2>
-        <p>Anyone who has ever dealt with dotfiles knows how difficult it can be to customize them (for example change a theme) and that's where confgen comes into place.</p>
-        <p>And also it is mainly written in <a href="https://ziglang.org/learn/overview/">Zig</a> but all the configuration is with lua files</p>
+        <p>Confgen is mainly written in <a href="https://ziglang.org/learn/overview/">Zig</a> but all the configuration is in lua.</p>
+        <p>Anyone who has ever dealt with dotfiles knows how difficult it can be to customize them (for example when changing a theme) and that's where confgen comes into place.</p>
 
         <pre><code class="language-ini">
 # config.ini

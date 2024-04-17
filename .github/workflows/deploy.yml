@@ -5,9 +5,15 @@ on:
     branches:
       - master
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,12 +25,12 @@ jobs:
           sudo apt install -y curl libluajit-5.1-2 unzip
           curl -L https://git.mzte.de/LordMZTE/confgen/releases/download/v0.2.2/confgen-linux-x86_64.zip -o confgen.zip
           unzip confgen.zip -d /tmp/confgen
-          /tmp/confgen/bin/confgen confgen.lua .
+          /tmp/confgen/bin/confgen confgen.lua _site/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
 
   deploy:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
     needs: build
     environment:
       name: github-pages

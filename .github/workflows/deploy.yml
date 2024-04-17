@@ -19,7 +19,7 @@ jobs:
           sudo apt install -y curl libluajit-5.1-2 unzip
           curl -L https://git.mzte.de/LordMZTE/confgen/releases/download/v0.2.2/confgen-linux-x86_64.zip -o confgen.zip
           unzip confgen.zip -d /tmp/confgen
-          /tmp/confgen/bin/confgen confgen.lua _site
+          /tmp/confgen/bin/confgen confgen.lua .
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
 

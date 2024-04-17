@@ -10,5 +10,86 @@
         <h1><% article.title %></h1>
         <h2><b><% article.date %></b></h2>
     </div>
+    <div class="content">
+        <h2>Why to blog in the first place?</h2>
+        <p>I have been reading blogs since I started the 10th grade mainly for school work which at the time I hated which gave me an impression that no matter the content blogs are boring. 
+        In the last few months I started reading blogs related to programming and tech (mostly zig content) which nowadays I believe is the best way to learn programming.</p>
+        <p>So to answer the question, I like the <a href="https://en.wikipedia.org/wiki/Golden_Rule">golden rule</a>.</p>
+        <p>That being said I needed to make the blog building fun and that's the reason for this title, so stick with me and I will explain <b>"How to build a blog the hard way".</b></p>
+        <iframe src="https://giphy.com/embed/ORjfgiG9ZtxcQQwZzv" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/126bpm-dancingatclub-ORjfgiG9ZtxcQQwZzv">via GIPHY</a></p>
+        <h2>Template generator vs SSG</h2>
+        <p><a href="https://git.mzte.de/LordMZTE/confgen">Confgen</a> is a tool with the main purpose to generate config files and was my main pick because it is simple to use and I use it a lot for my humble dotfiles but that is a topic for another day.</p>
+        <p>There are out there many options of ssg and they are all amazing but at the end of the dat they are on most of the cases doing the same as a template generator so why not doing a website with a template generator that I actually use very often. So lets talk a bit about the tool, shall we?</p>
+        <h2>Confgen</h2>
+        <p>Anyone who has ever dealt with dotfiles knows how difficult it can be to customize them (for example change a theme) and that's where confgen comes into place.</p>
+        <p>And also it is mainly written in <a href="https://ziglang.org/learn/overview/">Zig</a> but all the configuration is with lua files</p>
 
+        <pre><code class="language-ini">
+# config.ini
+
+background=#101010
+color=#F7A41D
+font-size=16
+
+# config.ini.cgt
+
+background=<&percnt; opt.background &percnt;>
+color=<&percnt; opt.color &percnt;>
+font-size=<&percnt; 10 + 6 &percnt;>
+        </code></pre>
+
+        <p>So here we see 2 features of confgen. First, between <b>&lt;&#37;</b> and <b>&#37;&gt</b> is where we set value to be written into the file and second, the <b>opt.field</b> are basically variables, we will see more about that in a second.</p> 
+        <p>You might have noticed that confgen also has this <b>.cgt</b> format and that is to tell confgen that this file should be intepreted to create a new file removing the <b>.cgt</b> with it's new configuration as the example above shows with the <b>config.ini</b> but there is something else to mention which is the confgen.lua aka the confgenfile.</p> 
+
+        <pre><code class="language-lua">
+-- confgen.lua
+
+cg.addFile("confgen.ini.cgt")
+
+-- optionally you could also sent an output path
+-- otherwise it will output to the cwd
+-- both absolute and relative paths work
+cg.addFile("confgen.ini.cgt", "relative/path")
+
+-- recursively adds files inside a path
+cg.addPath(".config")
+
+-- You can also set an output path here
+cg.addPath(".config", "relative/path")
+        </code></pre>
+        <p>This is how confgen tracks a file to send to another destination and if it a <b>.cgt</b> file it will read the file and do any operations between <b>&lt;&#37;</b> and <b>&#37;&gt</b>. 
+        Also, cg is a variable set by confgen for functions such as "addPath", "addFile", "doTemplate"... that should only be called in the confgen.lua file but cg also have the cg.opt which is where you set fields and values to be used inside <b>.cgt</b> files</p>
+        <p>Simple right? But there is more to see so stick with me.</p>
+        <pre><code class="language-lua">
+-- how-to-build-a-blog-the-hard-way.lua
+
+return {
+    title = "How to build a blog the hard way?",
+    lang = "eng",
+    date = "14-04-2024",
+}
+
+-- confgen.lua
+
+-- Never forget to add the file
+cg.addFile("how-to-build-a-blog-the-hard-way.html.cgt")
+
+-- Import the metadata to then be passed to opt.article
+-- to be used inside the html file in this example
+article = require("how-to-build-a-blog-the-hard-way")
+cg.opt.article["how-to-build-a-blog-the-hard-way"] = article
+
+-- how-to-build-a-blog-the-hard-way.html.cgt
+
+&lt! local article = opt.articles["how-to-build-a-blog-the-hard-way"] !&gt
+&lth1&gt<&percnt; article.title &percnt;>&lt/h1&gt
+&lth2&gt<&percnt; article.date &percnt;>&lt/h2&gt
+        </pre></code>
+
+        <p>Here we have a simplified version of how I used confgen to build this blog, of course I made a more complex version for automation purposes but this is good enough to understand how to use the tool. </p>
+        <p>New feature here is code between <b>&lt!</b> and <b>!&gt</b> which is where we do operations that are not written into the file, for example, assignments, control flow, operations...</p>
+        <p>Well, that's the basics of confgen, but the is much more about it such as confgenfs mounts a FUSE3 filesystem containing all the config files added to confgen.lua and processes each file whenever it's opened.</p>
+        <p>And if you like it, show some love to the developer and give a star to the project and have fun using it.</p>
+        <p>So, this is how you build a blog the hard way.</p> 
+<% opt.prismjs %>
 </body>

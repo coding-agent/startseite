@@ -2,6 +2,8 @@ cg.addPath('articles', '.')
 
 cg.addFile('index.html.cgt')
 cg.addFile('style.css.cgt')
+cg.addFile('prism.css')
+cg.addFile('prism.js')
 
 local function getArticles()
     local list = {}
@@ -25,7 +27,11 @@ cg.opt.style = require('style')
 cg.opt.doctype = "<!doctype html>"
 cg.opt.header_links = [[
 <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="prism.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+]]
+cg.opt.prismjs = [[
+<script src="prism.js"></script>
 ]]

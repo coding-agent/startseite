@@ -1,6 +1,7 @@
 *{
   font-family: "Share Tech", sans-serif;
   font-style: normal;
+  font-size: x-large;
   text-decoration: none;
   color: white;
 }
@@ -46,6 +47,9 @@ body{
     width: 100%;
     align-items: flex-start;
     padding: 25px 25px;
+    border-bottom: solid;
+    border-bottom-width: thin;
+    border-color: <% opt.style.sub_text %>;
 }
 
 
@@ -65,8 +69,9 @@ body{
 }
 
 .content {
-    max-width: 720px;
+    max-width: 60%;
     padding: 40px 25px;
+    align-self: start;
 }
 
 .blinking {

@@ -89,3 +89,9 @@ body{
       opacity: 1;
     }
   }
+
+  @media only screen and (max-width: 720px) {
+  .content {
+    max-width: 90%;
+  }
+}

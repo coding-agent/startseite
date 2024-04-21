@@ -6,6 +6,7 @@
 <% opt.header_links %>
 </head>
 <body>
+    <% opt.menu %>
     <div class="header">
         <h1><% article.title %></h1>
         <h2><b><% article.date %></b></h2>

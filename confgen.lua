@@ -35,3 +35,9 @@ cg.opt.header_links = [[
 cg.opt.prismjs = [[
 <script src="prism.js"></script>
 ]]
+
+cg.opt.menu = [[
+<div class="menu">
+    <a href="index.html">Home</a>
+</div>
+]]

@@ -7,6 +7,10 @@
 <% opt.header_links %>
 </head>
 <body>
+    <div class="menu">
+        <a href="index.html">Home</a>
+    </div>
+
     <div class="header">
         <h1> Coding Agent </h1>
         <h2 class="subtitle"> Software zauberkünstler </h2>
@@ -20,7 +24,7 @@
                 <hr>
                 <div class="article_footer">
                     <% article.date %>
-                    <b class="blinking readmore"> Read more </b>
+                    <b class="blinking"> Read more </b>
                 </div>
             </a>
         <! end !>

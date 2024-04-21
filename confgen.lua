@@ -36,8 +36,13 @@ cg.opt.prismjs = [[
 <script src="prism.js"></script>
 ]]
 
+email = "mcmrcs@pm.me"
+github = "https://github.com/coding-agent/"
+
 cg.opt.menu = [[
 <div class="menu">
     <a href="index.html">Home</a>
+    <a href="mailto:]] .. email .. [[">Contact</a>
+    <a href="]].. github ..[[">Github</a>
 </div>
 ]]

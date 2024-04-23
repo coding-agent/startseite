@@ -13,14 +13,14 @@
     </div>
     <div class="content">
         <h2>Why to blog in the first place?</h2>
-        <p>I have been reading blogs since I started the 10th grade mainly for school work which at the time I hated which gave me an impression that no matter the content blogs are boring. 
+        <p>I have been reading blogs since I started the 10th grade mainly for school work which at the time I hated and gave me an impression that no matter the content blogs were boring. 
         In the last few months I started reading blogs related to programming and tech (mostly zig content) which nowadays I believe is the best way to learn programming.</p>
         <p>So to answer the question, I like the <a href="https://en.wikipedia.org/wiki/Golden_Rule">golden rule</a>.</p>
         <p>That being said I needed to make the blog building fun and that's the reason for this title, so stick with me and I will explain <b>"How to build a blog the hard way".</b></p>
         <iframe src="https://giphy.com/embed/ORjfgiG9ZtxcQQwZzv" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/126bpm-dancingatclub-ORjfgiG9ZtxcQQwZzv">via GIPHY</a></p>
         <h2>Template generator vs SSG</h2>
-        <p><a href="https://git.mzte.de/LordMZTE/confgen">Confgen</a> is a tool with the main purpose to generate config files. I use it for my humble dotfiles but that is a topic for another day.</p>
-        <p>There are out there many options of ssg(static site generators) like Hugo, Next.js. For some ssg, a single structural metadata file may correspond to an entire website with a framework like AngularJS. But the always evolving javascript frameworks can be a time consuming to keep up which then leads to more time in web dev than anything else.
+        <p><a href="https://git.mzte.de/LordMZTE/confgen">Confgen</a> is a tool with the main purpose to generate config files. I use it for my humble <a href="https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory#Unix_and_Unix-like_environments">dotfiles</a> but that is a topic for another day.</p>
+        <p>There are many options for ssg(static site generators) like Hugo, Next.js... For some ssg, a single structural metadata file may correspond to an entire website with a framework like AngularJS. But the always evolving javascript frameworks can be a time consuming to keep up which then leads to more time spent in web dev than the kind of programming I like to do.
         With that being said, a ssg offers a more structured and scalable project in exchange of some flexibility but that is not how we build a blog the hard way. 
         So lets talk a bit about the tool that will make things fun, shall we?</p>
         <h2>Confgen</h2>
@@ -41,8 +41,8 @@ color=<&percnt; opt.color &percnt;>
 font-size=<&percnt; 10 + 6 &percnt;>
         </code></pre>
 
-        <p>So here we see 2 features of confgen. First, between <b>&lt;&#37;</b> and <b>&#37;&gt</b> is where we set value to be written into the file and second, the <b>opt.field</b> are basically variables, we will see more about that in a second.</p> 
-        <p>You might have noticed that confgen also has this <b>.cgt</b> format and that is to tell confgen that this file should be intepreted to create a new file removing the <b>.cgt</b> with it's new configuration as the example above shows with the <b>config.ini</b> but there is something else to mention which is the confgen.lua aka the confgenfile.</p> 
+        <p>So here we see 2 features of confgen. First, between <b>&lt;&#37;</b> and <b>&#37;&gt</b> is where we set values to be written into the file and second, the <b>opt.field</b> are basically global scope variables because opt variable is passed into the <b>.cgt</b> files, we will see more about that in a second.</p> 
+        <p>You might have noticed that confgen also has this <b>.cgt</b> format and that is to tell confgen that this file should be intepreted to create a new file removing the <b>.cgt</b> files added to the confgen file with it's new configuration as the example above shows with the <b>config.ini</b> but there is something else to mention which is the confgen.lua, aka, the confgen file.</p> 
 
         <pre><code class="language-lua">
 -- confgen.lua
@@ -74,7 +74,6 @@ return {
 
 -- confgen.lua
 
--- Never forget to add the file
 cg.addFile("how-to-build-a-blog-the-hard-way.html.cgt")
 
 -- Import the metadata to then be passed to opt.article
@@ -88,11 +87,30 @@ cg.opt.article["how-to-build-a-blog-the-hard-way"] = article
 &lth1&gt<&percnt; article.title &percnt;>&lt/h1&gt
 &lth2&gt<&percnt; article.date &percnt;>&lt/h2&gt
         </pre></code>
-
         <p>Here we have a simplified version of how I used confgen to build this blog, of course I made a more complex version for automation purposes but this is good enough to understand how to use the tool. </p>
-        <p>New feature here is code between <b>&lt!</b> and <b>!&gt</b> which is where we do operations that are not written into the file, for example, assignments, control flow, operations...</p>
-        <p>Well, that's the basics of confgen, but the is much more about it such as confgenfs mounts a FUSE3 filesystem containing all the config files added to confgen.lua and processes each file whenever it's opened.</p>
-        <p>And if you like it, show some love to the developer and give a star to the project and have fun using it.</p>
+        <p>New feature here is code between <b>&lt!</b> and <b>!&gt</b> which is where we do operations that are not written into the file, for example, assignments, control flow, operations... for example:</p>
+        <pre><code class="language-lua">
+-- example.txt.cgt
+
+&lt! local i = 0 !&gt
+&lt! while i <= 5 do !&gt
+&lt% i %&gt
+&lt! i = i + 1 !&gt
+&lt! end !&gt
+
+-- confgen.lua
+
+cg.addFile('example.txt.cgt')
+
+-- example.txt
+1
+2
+3
+4
+5
+        </code></pre>
+        <p>Well, that's the basics of confgen, but there is much more to talk about it such as confgenfs mounts a FUSE3 filesystem containing all the config files added to confgen.lua and processes each file whenever it's opened.</p>
+        <p>And if you like it, show some love to the <a href="https://github.com/LordMZTE">LordMZTE</a> for building this tool and give a star to the <a href="https://github.com/LordMZTE/confgen">project</a> and have fun using it, I highly recommend it.</p>
         <p>So, this is how you build a blog the hard way.</p> 
 <% opt.prismjs %>
 </body>

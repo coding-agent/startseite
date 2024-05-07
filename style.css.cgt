@@ -2,7 +2,16 @@
   font-family: "Share Tech", sans-serif;
   font-style: normal;
   font-size: x-large;
-  color: white;
+  color: <% opt.style.dark_text %>;
+}
+
+body{
+    background-color: <% opt.style.white_background %>; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    word-wrap: break-word;
+    padding: 0px 2.5%;
 }
 
 hr, b, .subtitle {
@@ -32,14 +41,6 @@ h1, h2, h3 {
     margin-block-end: 0.25em;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    word-wrap: break-word;
-    background: <% opt.style.background %>; 
-    padding: 0px 2.5%;
-}
 
 .header {
     width: 100%;
@@ -51,8 +52,8 @@ body{
 }
 
 .menu {
+    background: <% opt.style.white_menu_background %>;
     position: fixed;
-    background: <% opt.style.menu_background %>;
     top: 0;
     left: 0;
     width: 100%;
@@ -71,7 +72,7 @@ body{
 }
 
 .menu a {
-    color: <% opt.style.text %>;
+    color: <% opt.style.dark_text %>;
     text-decoration: none;
     padding-left: 15px;
     padding-right: 15px;
@@ -128,5 +129,23 @@ a.article {
   @media only screen and (max-width: 720px) {
   .content {
     max-width: 90%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  *{
+      color: <% opt.style.white_text %>;
+  }
+
+  body {
+    background-color: <% opt.style.dark_background %>; 
+  }
+  
+  .menu {
+    background: <% opt.style.dark_menu_background %>;
+  }
+
+  .menu a {
+    color: <% opt.style.white_text %>;
   }
 }

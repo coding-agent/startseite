@@ -28,7 +28,7 @@ jobs:
           /tmp/confgen/bin/confgen confgen.lua _site/
       - name: Deply to Webhook
         run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"data": "'"$(find _site -type f -o -type d)"'"}' ${{ secrets.WEBHOOK_URL }}
+          curl -X POST -H "Content-Type: application/json" -d '{"data": [ '"$(find _site -type f -o -type d | sed 's/"/\\"/g' | awk '{printf "\"%s\",\n", $0}' | sed '$ s/,$//')"' ] }' ${{ secrets.WEBHOOK_URL }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
   deploy:

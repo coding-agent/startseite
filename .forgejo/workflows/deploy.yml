@@ -25,17 +25,13 @@ jobs:
           curl -L https://git.mzte.de/LordMZTE/confgen/releases/download/v0.3.1/confgen-linux-x86_64.zip -o confgen.zip
           unzip confgen.zip -d /tmp/confgen
           /tmp/confgen/bin/confgen confgen.lua _site/
-      - name: list files
-        run: |
-          echo $(ls -R ../)
-          echo $(realpath .)
       - name: rsync deployments
         uses: https://github.com/burnett01/rsync-deployments@5.2
         with:
           switches: -avzr --delete
-        path: _site/
-        remote_path: /home/u111113374/public_html
-        remote_host: 91.108.101.148
-        remote_port: 65002
-        remote_user: u111113374
-        remote_key: ${{ secrets.DEPLOY_KEY }}
+          path: _site/
+          remote_path: /home/u111113374/public_html
+          remote_host: coding-agent.me
+          remote_port: 65002
+          remote_user: u111113374
+          remote_key: ${{ secrets.DEPLOY_KEY }}

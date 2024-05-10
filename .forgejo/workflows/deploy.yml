@@ -37,6 +37,7 @@ jobs:
         switches: -avzr --delete
         path: _site/
         remote_path: /home/u111113374/public_html
-        remote_host: coding-agent.me
+        remote_host: 91.108.101.148
+        remote_port: 65002
         remote_user: u111113374
         remote_key: ${{ secrets.DEPLOY_KEY }}

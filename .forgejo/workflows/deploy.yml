@@ -35,3 +35,5 @@ jobs:
           remote_port: 65002
           remote_user: u111113374
           remote_key: ${{ secrets.DEPLOY_KEY }}
+        run: |
+          cp /home/u111113374/assets /home/u111113374/public_html

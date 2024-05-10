@@ -25,6 +25,10 @@ jobs:
           curl -L https://git.mzte.de/LordMZTE/confgen/releases/download/v0.3.1/confgen-linux-x86_64.zip -o confgen.zip
           unzip confgen.zip -d /tmp/confgen
           /tmp/confgen/bin/confgen confgen.lua _site/
+      - name: list files
+        run: |
+          echo $(ls -R ../)
+          echo $(realpath .)
       - name: rsync deployments
         uses: https://github.com/burnett01/rsync-deployments@5.2
         with:

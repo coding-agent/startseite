@@ -26,9 +26,13 @@ jobs:
           curl -L https://git.mzte.de/LordMZTE/confgen/releases/download/v0.2.2/confgen-linux-x86_64.zip -o confgen.zip
           unzip confgen.zip -d /tmp/confgen
           /tmp/confgen/bin/confgen confgen.lua _site/
-      - name: Deply to Webhook
+      - name: Update deployment branch
         run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"data": [ '"$(find _site -type f -o -type d | sed 's/"/\\"/g' | awk '{printf "\"%s\",\n", $0}' | sed '$ s/,$//')"' ] }' ${{ secrets.WEBHOOK_URL }}
+          mv .git _site/.git
+          cd _site/
+          git add .
+          git commit -m "deployment ref-$GIT_COMMIT"
+          git push origin deploy
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
   deploy:

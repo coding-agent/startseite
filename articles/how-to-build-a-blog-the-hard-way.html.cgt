@@ -17,7 +17,7 @@
         In the last few months I started reading blogs related to programming and tech (mostly zig content) which nowadays I believe is the best way to learn programming.</p>
         <p>So to answer the question, I like the <a href="https://en.wikipedia.org/wiki/Golden_Rule">golden rule</a>.</p>
         <p>That being said I needed to make the blog building fun and that's the reason for this title, so stick with me and I will explain <b>"How to build a blog the hard way".</b></p>
-        <image src="../assets/kid_dancing.gif" width="480" height="360" />
+        <image src="assets/kid_dancing.gif" width="480" height="360" />
         <h2>Template generator vs SSG</h2>
         <p><a href="https://git.mzte.de/LordMZTE/confgen">Confgen</a> is a tool with the main purpose to generate config files. I use it for my humble <a href="https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory#Unix_and_Unix-like_environments">dotfiles</a> but that is a topic for another day.</p>
         <p>There are many options for ssg(static site generators) like Hugo, Next.js... For some ssg, a single structural metadata file may correspond to an entire website with a framework like AngularJS. But the always evolving javascript frameworks can be a time consuming to keep up which then leads to more time spent in web dev than the kind of programming I like to do.

@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: docker
 
     steps:
       - name: Checkout
@@ -23,9 +23,8 @@ jobs:
           curl -L https://git.mzte.de/LordMZTE/confgen/releases/download/v0.2.2/confgen-linux-x86_64.zip -o confgen.zip
           unzip confgen.zip -d /tmp/confgen
           /tmp/confgen/bin/confgen confgen.lua _site/
-
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: docker
     needs: build
     steps:
     - name: rsync deployments

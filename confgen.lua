@@ -36,7 +36,7 @@ cg.opt.prismjs = [[
 <script src="prism.js"></script>
 ]]
 
-email = "mcmrcs@pm.me"
+email = "info@coding-agent.me"
 github = "https://github.com/coding-agent/"
 
 cg.opt.menu = [[

@@ -32,7 +32,7 @@ jobs:
     needs: build
     steps:
     - name: rsync deployments
-      uses: github.com/burnett01/rsync-deployments@5.2
+      uses: https://github.com/burnett01/rsync-deployments@5.2
       with:
         switches: -avzr --delete
         path: _site/

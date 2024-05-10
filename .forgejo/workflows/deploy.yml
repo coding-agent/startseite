@@ -31,10 +31,12 @@ jobs:
       image: node:20-bookworm
     needs: build
     steps:
-    - name: rsync deployments
-      uses: https://github.com/burnett01/rsync-deployments@5.2
-      with:
-        switches: -avzr --delete
+      - name: list files
+        run: echo $(ls -R)
+      - name: rsync deployments
+        uses: https://github.com/burnett01/rsync-deployments@5.2
+        with:
+          switches: -avzr --delete
         path: _site/
         remote_path: /home/u111113374/public_html
         remote_host: 91.108.101.148

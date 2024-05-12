@@ -35,3 +35,10 @@ jobs:
           remote_port: 65002
           remote_user: u111113374
           remote_key: ${{ secrets.DEPLOY_KEY }}
+      # this is a workaround the rsync which deletes assets folder
+      - name: add assets to public html
+        uses: JimCronqvist/action-ssh@master
+        with:
+          hosts: 'u111113374@coding-agent.me'
+          privateKey: ${{ secrets.DEPLOY_KEY }}
+          command: cp -r /home/u111113374/assets /home/u111113374/public_html

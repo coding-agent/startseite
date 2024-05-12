@@ -39,6 +39,6 @@ jobs:
       - name: add assets to public html
         uses: https://github.com/JimCronqvist/action-ssh@1.0.0
         with:
-          hosts: 'u111113374@coding-agent.me'
+          hosts: 'u111113374@coding-agent.me:65002'
           privateKey: ${{ secrets.DEPLOY_KEY }}
           command: cp -r /home/u111113374/assets /home/u111113374/public_html

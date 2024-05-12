@@ -30,16 +30,16 @@ jobs:
         with:
           switches: -avzr --delete
           path: _site/
-          remote_path: /home/u111113374/public_html
+          remote_path: ${{ secrets.SSH_PUBLIC_PATH }} 
           remote_host: coding-agent.me
-          remote_port: 65002
-          remote_user: u111113374
+          remote_port: ${{ secrets.SSH_PORT }}
+          remote_user: ${{ secrets.SSH_USER }}
           remote_key: ${{ secrets.DEPLOY_KEY }}
       # this is a workaround the rsync which deletes assets folder
       - name: add assets to public html
         uses: https://github.com/JimCronqvist/action-ssh@1.0.0
         with:
-          hosts: 'u111113374@coding-agent.me:65002'
+          hosts: '${{ secrets.SSH_USER }}@coding-agent.me:${{ secrets.SSH_PORT }}'
           privateKey: ${{ secrets.DEPLOY_KEY }}
           debug: false
-          command: cp -r /home/u111113374/assets /home/u111113374/public_html
+          command: cp -r ${{ secrets.SSH_ASSETS_PATH }} ${{ secrets.SSH_PUBLIC_PATH }} 

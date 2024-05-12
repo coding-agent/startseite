@@ -41,4 +41,5 @@ jobs:
         with:
           hosts: 'u111113374@coding-agent.me:65002'
           privateKey: ${{ secrets.DEPLOY_KEY }}
+          debug: false
           command: cp -r /home/u111113374/assets /home/u111113374/public_html

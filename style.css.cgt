@@ -126,10 +126,23 @@ a.article {
     }
   }
 
-  @media only screen and (max-width: 720px) {
+@media (max-width: 768px) {
   .content {
     max-width: 90%;
   }
+
+.menu {
+    background: none;
+    position: static;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    opacity: 1;
+}
+
 }
 
 @media (prefers-color-scheme: dark) {

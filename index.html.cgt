@@ -10,8 +10,8 @@
     <% opt.menu %>
 
     <div class="header">
-        <h1> Coding Agent </h1>
-        <h2 class="subtitle"> Software Goochelaar </h2>
+        <h1> Coding Agent's </h1>
+        <h2 class="subtitle"> Software Development Blog </h2>
     </div>
 
     <div class="articles">

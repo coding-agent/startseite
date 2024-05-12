@@ -26,6 +26,7 @@ cg.opt.style = require('style')
 
 cg.opt.doctype = "<!doctype html>"
 cg.opt.header_links = [[
+<script src="https://kit.fontawesome.com/c95d3d678b.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="stylesheet" type="text/css" href="prism.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,8 +42,8 @@ github = "https://github.com/coding-agent/"
 
 cg.opt.menu = [[
 <div class="menu">
-    <a href="index.html">Home</a>
-    <a href="mailto:]] .. email .. [[">Contact</a>
-    <a href="]].. github ..[[">Github</a>
+    <a href="index.html"><i class="fa-solid fa-house"></i> Home </a>
+    <a href="mailto:]] .. email .. [["> <i class="fa-solid fa-envelope"></i> Contact </a>
+    <a href="]].. github ..[["> <i class="fa-brands fa-github"></i> Github </a>
 </div>
 ]]

@@ -37,7 +37,7 @@ jobs:
           remote_key: ${{ secrets.DEPLOY_KEY }}
       # this is a workaround the rsync which deletes assets folder
       - name: add assets to public html
-        uses: JimCronqvist/action-ssh@master
+        uses: https://github.com/JimCronqvist/action-ssh@1.0.0
         with:
           hosts: 'u111113374@coding-agent.me'
           privateKey: ${{ secrets.DEPLOY_KEY }}

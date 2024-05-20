@@ -17,12 +17,13 @@
     <div class="articles">
     <h2> Articles </h2>
         <! for _, article in pairs(opt.articles) do !>
-            <a href="<% article.file %>" class="article">
-                <h3><% article.title %> <sup><% article.lang %></sup></h3>
-                <hr>
-                <div class="article_footer">
-                    <% article.date %>
-                    <b class="blinking"> Read more </b>
+            <a href="<% article.file %>">
+                <div class="article">
+                    <h3 class="article_title"><% article.title %> <sup><% article.lang %></sup></h3>
+                    <div class="article_footer">
+                        <% article.date %>
+                        <b class="blinking"> Read more </b>
+                    </div>
                 </div>
             </a>
         <! end !>

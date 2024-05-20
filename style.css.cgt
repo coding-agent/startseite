@@ -83,16 +83,28 @@ h1, h2, h3 {
     color: <% opt.style.blue %>;
 }
 
+.article {
+    transition: 0.3s ease;
+    padding: 5px;
+    border-radius: 10px;
+}
+
 a.article {
     text-decoration: none;
 }
 
 .article:hover {
-    background: <% opt.style.sub_background %>;
-    color: <% opt.style.blue %>;
+    background: <% opt.style.white_sub_background %>;
+}
+
+.article_title {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: solid <% opt.style.sub_text %> 2px;
 }
 
 .article_footer {
+    padding-bottom: 20px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -108,6 +120,12 @@ a.article {
     width: 40%;
     padding: 40px 25px;
     align-self: start;
+    display: flex;
+    flex-direction: column;
+}
+
+.articles a {
+    text-decoration: none;
 }
 
 .blinking {
@@ -146,19 +164,23 @@ a.article {
 }
 
 @media (prefers-color-scheme: dark) {
-  *{
-      color: <% opt.style.white_text %>;
-  }
+    *{
+        color: <% opt.style.white_text %>;
+    }
 
-  body {
-    background-color: <% opt.style.dark_background %>; 
-  }
-  
-  .menu {
-    background: <% opt.style.dark_menu_background %>;
-  }
+    body {
+        background-color: <% opt.style.dark_background %>; 
+    }
 
-  .menu a {
-    color: <% opt.style.white_text %>;
-  }
+    .menu {
+        background: <% opt.style.dark_menu_background %>;
+    }
+
+    .menu a {
+        color: <% opt.style.white_text %>;
+    }
+
+    .article:hover {
+        background: <% opt.style.dark_sub_background %>;
+    }
 }

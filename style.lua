@@ -2,7 +2,8 @@ local style = {}
 
 style.dark_background = '#202020'
 style.white_background = '#FFFFFF'
-style.sub_background = '#E1E1E1'
+style.dark_sub_background = '#101010'
+style.white_sub_background = '#EEEEEE'
 style.dark_menu_background = '#181818'
 style.white_menu_background = '#D1D1D1'
 style.white_text = '#F1F1F1'

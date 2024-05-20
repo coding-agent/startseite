@@ -29,6 +29,7 @@ cg.opt.style = require('style')
 
 cg.opt.doctype = "<!doctype html>"
 cg.opt.header_links = [[
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5734329956723165" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-5734329956723165">
 <script src="https://kit.fontawesome.com/c95d3d678b.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="style.css">

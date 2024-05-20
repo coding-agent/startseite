@@ -19,7 +19,7 @@ local function getArticles()
     end
 
     -- order articles by date
-    table.sort(list, function (a, b) return a.date < b.date end)
+    table.sort(list, function (a, b) return a.date > b.date end)
 
     return list
 end

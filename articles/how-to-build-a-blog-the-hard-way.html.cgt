@@ -48,5 +48,4 @@
         <p>Well, that's the basics of confgen, but there is much more to talk about it such as confgenfs mounts a FUSE3 filesystem containing all the config files added to confgen.lua and processes each file whenever it's opened.</p>
         <p>And if you like it, show some love to the <a href="https://github.com/LordMZTE">LordMZTE</a> for building this tool and give a star to the <a href="https://github.com/LordMZTE/confgen">project</a> and have fun using it, I highly recommend it.</p>
         <p>So, this is how you build a blog the hard way.</p> 
-<% opt.prismjs %>
 </body>

@@ -18,6 +18,7 @@ local function getArticles()
 
     -- order articles by date in descending order
     table.sort(list, function (a, b) return a.date > b.date end)
+<meta name="google-adsense-account" content="ca-pub-5734329956723165">
 
     return list
 end
@@ -27,15 +28,13 @@ cg.opt.style = require('style')
 
 cg.opt.doctype = "<!doctype html>"
 cg.opt.header_links = [[
+<link type="text/css" rel="stylesheet" href="style.css">
 <meta name="google-adsense-account" content="ca-pub-5734329956723165">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5734329956723165" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/c95d3d678b.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
-]]
-cg.opt.prismjs = [[
-<script src="prism.js"></script>
 ]]
 
 email = "info@coding-agent.me"

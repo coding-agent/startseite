@@ -1,0 +1,54 @@
+{
+  "parser-directories": [
+    "/tmp/ts-parsers"
+  ],
+  "theme": {
+    "constant.builtin": {
+      "color": "#E1E1E1",
+      "bold": true
+    },
+    "comment": {
+      "color": "#AAAA72",
+      "italic": true
+    },
+    "constant": "#E1E1E1",
+    "number": {
+      "bold": true,
+      "color": "#FF7457"
+    },
+    "variable.builtin": {
+      "bold": true
+    },
+    "attribute": {
+      "italic": true,
+      "color": "#6688FF"
+    },
+    "punctuation.bracket": "#FFFFFF",
+    "operator": {
+      "color": "#F7A41D",
+      "bold": true
+    },
+    "string.special": "#F7A41D",
+    "keyword": "#FFFFFF",
+    "string": "#22EE53",
+    "type.builtin": {
+      "color": "#6688FF",
+      "bold": true
+    },
+    "embedded": null,
+    "function.builtin": {
+      "color": "#6688FF",
+      "bold": true
+    },
+    "module": "#6688FF",
+    "function": "#FFFFFF",
+    "punctuation.delimiter": "#6688FF",
+    "tag": "#6688FF",
+    "type": "#6688FF",
+    "variable.parameter": {
+      "underline": true
+    },
+    "property": "#6688FF",
+    "constructor": "#6688FF"
+  }
+}

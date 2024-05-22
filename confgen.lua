@@ -1,5 +1,4 @@
 cg.addPath('articles', '.')
-
 cg.addFile('index.html.cgt')
 cg.addFile('style.css.cgt')
 

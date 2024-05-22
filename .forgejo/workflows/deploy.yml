@@ -21,7 +21,8 @@ jobs:
       - name: Install and run Confgen 
         run: |
           curl -L https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.22.6.zip -o tree-sitter.zip
-          unzip tree-sitter.zip /tmp/tree-sitter
+          unzip tree-sitter.zip -d /tmp/tree-sitter
+          alias tree-sitter=/tmp/tree-sitter
       - name: Install and run Confgen 
         run: |
           apt update

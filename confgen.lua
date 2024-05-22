@@ -18,7 +18,6 @@ local function getArticles()
 
     -- order articles by date in descending order
     table.sort(list, function (a, b) return a.date > b.date end)
-<meta name="google-adsense-account" content="ca-pub-5734329956723165">
 
     return list
 end

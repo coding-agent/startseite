@@ -18,14 +18,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup tree-sitter-cli
+      - name: Install and run Confgen and setup tree-sitter-cli 
         run: |
           curl -L https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.22.6.zip -o tree-sitter.zip
           unzip tree-sitter.zip -d /tmp/tree-sitter
           alias tree-sitter=/tmp/tree-sitter
-      - name: Install and run Confgen 
-        run: |
-          tree-sitter -h
           apt update
           apt install -y curl libluajit-5.1-2 unzip
           curl -L https://git.mzte.de/LordMZTE/confgen/releases/download/v0.3.1/confgen-linux-x86_64.zip -o confgen.zip

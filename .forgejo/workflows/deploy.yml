@@ -26,6 +26,7 @@ jobs:
           curl -L https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.22.6.zip -o tree-sitter.zip
           unzip tree-sitter.zip -d /tmp/tree-sitter
           alias tree-sitter=/tmp/tree-sitter
+          realpath .
           git update-index --chmod=+x /tmp/tree-sitter
           tree-sitter -h
 

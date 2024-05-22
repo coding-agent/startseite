@@ -16,7 +16,7 @@ local function getArticles()
         end
     end
 
-    -- order articles by date
+    -- order articles by date in descending order
     table.sort(list, function (a, b) return a.date > b.date end)
 
     return list
@@ -27,8 +27,8 @@ cg.opt.style = require('style')
 
 cg.opt.doctype = "<!doctype html>"
 cg.opt.header_links = [[
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5734329956723165" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-5734329956723165">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5734329956723165" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/c95d3d678b.js" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

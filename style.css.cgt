@@ -132,6 +132,20 @@ a.article {
     animation: blink 2s linear infinite;
 }
 
+.code {
+    background: #292929;
+    padding: 2em 1em;
+    border-radius: .3em;
+}
+
+.line-number {
+    display: none;
+}
+
+.line {
+    white-space: pre;
+}
+
 @keyframes blink{
     0% {
       opacity: 1;

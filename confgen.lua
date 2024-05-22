@@ -2,8 +2,6 @@ cg.addPath('articles', '.')
 
 cg.addFile('index.html.cgt')
 cg.addFile('style.css.cgt')
-cg.addFile('prism.css')
-cg.addFile('prism.js')
 
 local function getArticles()
     local list = {}
@@ -32,8 +30,6 @@ cg.opt.header_links = [[
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5734329956723165" crossorigin="anonymous"></script>
 <meta name="google-adsense-account" content="ca-pub-5734329956723165">
 <script src="https://kit.fontawesome.com/c95d3d678b.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" type="text/css" href="prism.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
@@ -52,3 +48,5 @@ cg.opt.menu = [[
     <a href="]].. github ..[["> <i class="fa-brands fa-github"></i> Github </a>
 </div>
 ]]
+
+cg.opt.highlight = require("highlight")

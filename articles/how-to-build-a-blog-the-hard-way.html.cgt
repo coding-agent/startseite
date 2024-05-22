@@ -27,88 +27,24 @@
         <p>Confgen is mainly written in <a href="https://ziglang.org/learn/overview/">Zig</a> but all the configuration is in lua.</p>
         <p>Anyone who has ever dealt with dotfiles knows how difficult it can be to customize them (for example when changing a theme) and that's where confgen comes into place.</p>
 
-        <pre><code class="language-ini">
-# config.ini
-
-background=#101010
-color=#F7A41D
-font-size=16
-
-# config.ini.cgt
-
-background=<&percnt; opt.background &percnt;>
-color=<&percnt; opt.color &percnt;>
-font-size=<&percnt; 10 + 6 &percnt;>
-        </code></pre>
+        <% opt.highlight("htbb1.lua") %>
 
         <p>So here we see 2 features of confgen. First, between <b>&lt;&#37;</b> and <b>&#37;&gt</b> is where we set values to be written into the file and second, the <b>opt.field</b> are basically global scope variables because opt variable is passed into the <b>.cgt</b> files, we will see more about that in a second.</p> 
         <p>You might have noticed that confgen also has this <b>.cgt</b> format and that is to tell confgen that this file should be intepreted to create a new file removing the <b>.cgt</b> files added to the confgen file with it's new configuration as the example above shows with the <b>config.ini</b> but there is something else to mention which is the confgen.lua, aka, the confgen file.</p> 
 
-        <pre><code class="language-lua">
--- confgen.lua
+        <% opt.highlight("htbb2.lua") %>
 
-cg.addFile("confgen.ini.cgt")
-
--- optionally you could also sent an output path
--- otherwise it will output to the cwd
--- both absolute and relative paths work
-cg.addFile("confgen.ini.cgt", "relative/path")
-
--- recursively adds files inside a path
-cg.addPath(".config")
-
--- You can also set an output path here
-cg.addPath(".config", "relative/path")
-        </code></pre>
         <p>This is how confgen tracks a file to send to another destination and if it a <b>.cgt</b> file it will read the file and do any operations between <b>&lt;&#37;</b> and <b>&#37;&gt</b>. 
         Also, cg is a variable set by confgen for functions such as "addPath", "addFile", "doTemplate"... that should only be called in the confgen.lua file but cg also have the cg.opt which is where you set fields and values to be used inside <b>.cgt</b> files</p>
         <p>Simple right? But there is more to see so stick with me.</p>
-        <pre><code class="language-lua">
--- how-to-build-a-blog-the-hard-way.lua
 
-return {
-    title = "How to build a blog the hard way?",
-    lang = "eng",
-    date = "14-04-2024",
-}
+        <% opt.highlight("htbb3.lua") %>
 
--- confgen.lua
-
-cg.addFile("how-to-build-a-blog-the-hard-way.html.cgt")
-
--- Import the metadata to then be passed to opt.article
--- to be used inside the html file in this example
-article = require("how-to-build-a-blog-the-hard-way")
-cg.opt.article["how-to-build-a-blog-the-hard-way"] = article
-
--- how-to-build-a-blog-the-hard-way.html.cgt
-
-&lt! local article = opt.articles["how-to-build-a-blog-the-hard-way"] !&gt
-&lth1&gt<&percnt; article.title &percnt;>&lt/h1&gt
-&lth2&gt<&percnt; article.date &percnt;>&lt/h2&gt
-        </pre></code>
         <p>Here we have a simplified version of how I used confgen to build this blog, of course I made a more complex version for automation purposes but this is good enough to understand how to use the tool. </p>
         <p>New feature here is code between <b>&lt!</b> and <b>!&gt</b> which is where we do operations that are not written into the file, for example, assignments, control flow, operations... for example:</p>
-        <pre><code class="language-lua">
--- example.txt.cgt
 
-&lt! local i = 0 !&gt
-&lt! while i <= 5 do !&gt
-&lt% i %&gt
-&lt! i = i + 1 !&gt
-&lt! end !&gt
+        <% opt.highlight("htbb4.lua") %>
 
--- confgen.lua
-
-cg.addFile('example.txt.cgt')
-
--- example.txt
-1
-2
-3
-4
-5
-        </code></pre>
         <p>Well, that's the basics of confgen, but there is much more to talk about it such as confgenfs mounts a FUSE3 filesystem containing all the config files added to confgen.lua and processes each file whenever it's opened.</p>
         <p>And if you like it, show some love to the <a href="https://github.com/LordMZTE">LordMZTE</a> for building this tool and give a star to the <a href="https://github.com/LordMZTE/confgen">project</a> and have fun using it, I highly recommend it.</p>
         <p>So, this is how you build a blog the hard way.</p> 

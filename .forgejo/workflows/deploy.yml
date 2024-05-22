@@ -21,7 +21,7 @@ jobs:
       - name: Install and setup Tree-Sitter-Cli
         run: |
           apt update
-          apt install -y tree-sitter-highlight
+          apt install -y tree-sitter
       - name: Install and run Confgen 
         run: |
           apt install -y curl libluajit-5.1-2 unzip

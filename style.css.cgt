@@ -176,7 +176,7 @@ a.article {
     }
   }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .content {
     max-width: 90%;
   }

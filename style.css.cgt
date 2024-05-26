@@ -136,6 +136,7 @@ a.article {
     background: #292929;
     padding: 2em 1em;
     border-radius: .3em;
+    overflow-x: scroll;
 }
 
 .line-number {

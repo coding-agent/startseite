@@ -147,6 +147,23 @@ a.article {
     white-space: pre;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F7A41D; 
+}
+
 @keyframes blink{
     0% {
       opacity: 1;

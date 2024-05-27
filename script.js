@@ -1,4 +1,4 @@
-document.querySelector("div.article").onmouseover = function (e) {
+document.querySelector("div.article").parentElement.onmouseover = function (e) {
   const el = e.target
   const child = el.querySelector(".blinking")
   if (child != null) {
@@ -6,7 +6,7 @@ document.querySelector("div.article").onmouseover = function (e) {
   }
 }
 
-document.querySelector("div.article").onmouseleave = function (e) {
+document.querySelector("div.article").parentElement.onmouseleave = function (e) {
   const el = e.target
   const child = el.querySelector(".blinking")
   if (child != null) {

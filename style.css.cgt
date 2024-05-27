@@ -129,6 +129,7 @@ a.article {
 }
 
 .blinking {
+    display: none;
     animation: blink 2s linear infinite;
 }
 

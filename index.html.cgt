@@ -4,6 +4,7 @@
 <title>Coding Agent's Blog</title>
 <meta name="description" content="Personal blog page">
 <meta name="keywords" content="coding-agent blog">
+<script src="script.js" defer></script>
 <% opt.header_links %>
 </head>
 <body>

@@ -27,12 +27,14 @@ cg.opt.style = require('style')
 
 cg.opt.doctype = "<!doctype html>"
 cg.opt.header_links = [[
-<link type="text/css" rel="stylesheet" href="style.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-adsense-account" content="ca-pub-5734329956723165">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5734329956723165" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/c95d3d678b.js" crossorigin="anonymous"></script>
+<link type="text/css" rel="stylesheet" href="style.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/assets/favicon.ico" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">

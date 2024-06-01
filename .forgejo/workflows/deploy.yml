@@ -55,4 +55,7 @@ jobs:
           hosts: '${{ secrets.SSH_USER }}@coding-agent.me:${{ secrets.SSH_PORT }}'
           privateKey: ${{ secrets.DEPLOY_KEY }}
           debug: false
-          command: cp -r ${{ secrets.SSH_ASSETS_PATH }} ${{ secrets.SSH_PUBLIC_PATH }} 
+          command: |
+            ls ${{ secrets.SSH_ASSETS_PATH }}
+            rm -rf ${{ secrets.SSH_PUBLIC_PATH }}/assets/ 
+            cp -rf ${{ secrets.SSH_ASSETS_PATH }} ${{ secrets.SSH_PUBLIC_PATH }} 

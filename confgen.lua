@@ -1,6 +1,6 @@
 cg.addPath('articles', '.')
+cg.addPath('scripts')
 cg.addFile('index.html.cgt')
-cg.addFile('script.js')
 cg.addFile('style.css.cgt')
 
 local function getArticles()

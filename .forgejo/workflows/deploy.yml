@@ -56,6 +56,5 @@ jobs:
           privateKey: ${{ secrets.DEPLOY_KEY }}
           debug: false
           command: |
-            ls ${{ secrets.SSH_ASSETS_PATH }}
             rm -rf ${{ secrets.SSH_PUBLIC_PATH }}/assets/ 
             cp -rf ${{ secrets.SSH_ASSETS_PATH }} ${{ secrets.SSH_PUBLIC_PATH }} 

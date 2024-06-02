@@ -16,8 +16,14 @@ local function getArticles()
         end
     end
 
-    -- order articles by date in descending order
-    table.sort(list, function (a, b) return a.date > b.date end)
+    local function dateToNumber(date_str)
+        local day, month, year = date_str:match("(%d%d)-(%d%d)-(%d%d%d%d)")
+        return tonumber(year .. month .. day)
+    end
+
+    table.sort(list, function (a, b)
+        return dateToNumber(a.date) < dateToNumber(b.date)
+    end)
 
     return list
 end

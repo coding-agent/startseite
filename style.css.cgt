@@ -99,16 +99,17 @@ h1, h2, h3 {
     border-radius: 10px;
 }
 
-project p {
+.projects p {
     color: #AAAAAA;
+    margin: 0px;
+}
+
+.articles a,
+.projects a {
     text-decoration: none;
 }
 
-.article a {
-    text-decoration: none;
-}
-
-.article:hover, .project:hover {
+.article:hover {
     background: <% opt.style.white_sub_background %>;
 }
 

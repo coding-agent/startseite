@@ -51,9 +51,6 @@ h1, h2, h3 {
     width: 100%;
     align-items: flex-start;
     padding: 25px 25px;
-    border-bottom: solid;
-    border-bottom-width: thin;
-    border-color: <% opt.style.sub_text %>;
 }
 
 .menu {

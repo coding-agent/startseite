@@ -132,6 +132,12 @@ h1, h2, h3 {
     align-self: start;
 }
 
+section.main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .articles {
     clear: both;
     float: left;
@@ -146,7 +152,7 @@ h1, h2, h3 {
     float: left;
     width: 30%;
     padding: 40px 25px;
-    align-self: start;
+    align-self: flex-end;
     display: flex;
     flex-direction: column;
 }

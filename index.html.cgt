@@ -16,7 +16,7 @@
     </div>
 
     <div class="articles">
-    <h2> Articles </h2>
+    <h2> Blog </h2>
         <! for _, article in pairs(opt.articles) do !>
             <a href="<% article.file %>">
                 <div class="article">
@@ -29,8 +29,18 @@
             </a>
         <! end !>
     </div>
+
     <div class="projects">
-    
+        <h2>Open Source</h2>
+        <! for _, project in pairs(opt.projects) do !>
+            <a href="<% project.url %>">
+                <div class="project">
+                    <h3><% project.name %></h3>
+                    <p><% project.description %></p>
+                </div>
+            </a>
+        <! end !>
     </div>
+
 </body>
 </html>

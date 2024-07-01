@@ -36,6 +36,7 @@ local email = "info@coding-agent.me"
 local github = "https://github.com/coding-agent/"
 
 cg.opt.highlight = require("highlight")
+cg.opt.projects = require("projects")
 cg.opt.style = require('style')
 cg.opt.doctype = "<!doctype html>"
 cg.opt.header_links = [[

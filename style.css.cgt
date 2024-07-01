@@ -88,17 +88,27 @@ h1, h2, h3 {
     color: <% opt.style.blue %>;
 }
 
-.article {
-    transition: 0.3s ease;
+.main {
+    display: flex;
+    flex-direction: row;
+}
+
+.article, .project {
+    transition: 1s ease;
     padding: 5px;
     border-radius: 10px;
 }
 
-a.article {
+project p {
+    color: #AAAAAA;
     text-decoration: none;
 }
 
-.article:hover {
+.article a {
+    text-decoration: none;
+}
+
+.article:hover, .project:hover {
     background: <% opt.style.white_sub_background %>;
 }
 
@@ -122,20 +132,31 @@ a.article {
 }
 
 .articles {
-    width: 40%;
+    clear: both;
+    float: left;
+    width: 60%;
     padding: 40px 25px;
     align-self: start;
     display: flex;
     flex-direction: column;
 }
 
-.articles a {
+.projects {
+    float: left;
+    width: 30%;
+    padding: 40px 25px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+}
+
+a.articles , p.projects {
     text-decoration: none;
 }
 
 .blinking {
     display: none;
-    animation: blink 2s linear infinite;
+    animation: blink 4s linear infinite;
 }
 
 .code {
@@ -222,7 +243,6 @@ a.article {
         color: <% opt.style.white_text %>;
     }
 
-    .article:hover {
+    .article:hover, project:hover {
         background: <% opt.style.dark_sub_background %>;
     }
-}

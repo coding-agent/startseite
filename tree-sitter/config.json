@@ -25,10 +25,10 @@
     },
     "punctuation.bracket": "#FFFFFF",
     "operator": {
-      "color": "#F7A41D",
+      "color": "#DC143C",
       "bold": true
     },
-    "string.special": "#F7A41D",
+    "string.special": "#DC143C",
     "keyword": "#FFFFFF",
     "string": "#22EE53",
     "type.builtin": {

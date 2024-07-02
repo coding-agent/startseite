@@ -197,7 +197,7 @@ p.projects {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #F7A41D; 
+    background: #DC143C; 
 }
 
 @keyframes blink{

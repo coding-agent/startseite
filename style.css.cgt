@@ -146,7 +146,8 @@ section.main {
 }
 
 .projects {
-    float: left;
+    position: absolute;
+    top: 215px;
     width: 30%;
     padding: 40px 25px;
     align-self: flex-end;

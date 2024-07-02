@@ -19,7 +19,9 @@ img {
     width: 480px;
 }
 
-hr, b, .subtitle {
+hr,
+b,
+.subtitle {
     color: <% opt.style.sub_text %>;
 }
 
@@ -106,7 +108,8 @@ h1, h2, h3 {
     text-decoration: none;
 }
 
-.article:hover {
+.article:hover,
+.project:hover {
     background: <% opt.style.white_sub_background %>;
 }
 
@@ -155,7 +158,8 @@ section.main {
     flex-direction: column;
 }
 
-a.articles , p.projects {
+a.articles,
+p.projects {
     text-decoration: none;
 }
 
@@ -229,6 +233,9 @@ a.articles , p.projects {
         width: 100%;
     }
 
+    .projects {
+        position: relative;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -248,6 +255,7 @@ a.articles , p.projects {
         color: <% opt.style.white_text %>;
     }
 
-    .article:hover, project:hover {
+    .article:hover,
+    .project:hover {
         background: <% opt.style.dark_sub_background %>;
     }
